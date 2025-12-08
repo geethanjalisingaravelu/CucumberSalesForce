@@ -12,7 +12,6 @@ import org.openqa.selenium.WebDriver;
 import com.cucumber.base.BasePage;
 import com.cucumber.base.BaseTest;
 
-
 import io.cucumber.java.After;
 import io.cucumber.java.Scenario;
 import io.cucumber.java.en.And;
@@ -23,6 +22,9 @@ import io.cucumber.java.en.When;
 public class Steps extends BaseTest {
 	
 	BasePage page;
+	
+	
+
 
 	
 
@@ -79,6 +81,9 @@ public class Steps extends BaseTest {
 	public void user_verify_the_page(String elementName) {
 	  page.validatePage(elementName); 
 	}
+
+	
+	
 	
 	@Then("User validates the dropdown {string} with options")
 	public void user_validates_the_dropdown_with_options(String elementName, io.cucumber.datatable.DataTable dataTable) {
@@ -146,6 +151,21 @@ public class Steps extends BaseTest {
 	public void user_switch_to_window_alert_and_accept() {
 	   page.windowsAlert();
 	}
+	@And("User Capture Title and store in oldTitle")
+	public void user_capture_title_and_store_in_old_title() {
+	 page.captureTitle();
+	}
+	@Then("Verify current title matches oldTitle")
+	public void verify_current_title_matches_old_title() {
+	    page.verifyCurrentTitleMatchesOld();
+	}
+
+	@And("User switch to other window {string}")
+	public void user_switch_to_other_window(String elementName) {
+	  page.switchToOtherWindow(elementName);
+	}
+
+
 
 	
 	@After

@@ -1,7 +1,12 @@
 package com.cucumber.base;
 
+import java.time.LocalDate;
+import java.time.Month;
+import java.time.format.TextStyle;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Locale;
+import java.util.Map;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -19,6 +24,7 @@ import com.cucumber.utils.PropertiesFile;
 public class BasePage  {
 	
 WebDriver driver;
+static String oldTitle;
 PropertiesFile prop = new PropertiesFile();
 	
 	HashMap<String,By> ObjectRepo = new HashMap<String,By>();
@@ -94,6 +100,8 @@ PropertiesFile prop = new PropertiesFile();
 			System.out.println(elementName+ " Page is not displayed");
 		Assert.assertTrue(element.isDisplayed(), elementName+ " Page is not displayed");
 	}
+	
+	
 	
 	public void validateDropdownOptions(String viewAllDropDown, String[] expectedOptions) {
 	    List<WebElement> actualList = getElements(viewAllDropDown);
@@ -174,7 +182,20 @@ PropertiesFile prop = new PropertiesFile();
 		
 		driver.switchTo().window(parentWindow);
 	}
-	
+	public void switchToOtherWindow(String elementName) {
+		
+		String parentWindow = driver.getWindowHandle();
+		for(String window:driver.getWindowHandles()) {
+			if (!window.equals(parentWindow)) {
+			driver.switchTo().window(window);
+			WebElement element = getElement(elementName);
+			element.click();
+			
+		}
+		}
+		driver.switchTo().window(parentWindow);
+		
+	}
 
 	
 	public void verifyNewWindowClosed() {
@@ -220,5 +241,19 @@ PropertiesFile prop = new PropertiesFile();
 		driver.switchTo().alert().accept();
 	}
 	
+	
+
+	public void captureTitle() {
+	    oldTitle = driver.getTitle();
+	   // System.out.println(oldTitle);
+	}
+
+	public void verifyCurrentTitleMatchesOld() {
+		//System.out.println(driver.getTitle());
+		// System.out.println(oldTitle);
+	    Assert.assertEquals(oldTitle, driver.getTitle());
+	}
+	
+
 	
 }

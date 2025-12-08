@@ -36,7 +36,7 @@ Then User Click on "contacts"
 Then User selects "My Contacts" from "viewDropDown" dropdown
 Then User verify the page "myContactsView" 
 
-
+@smoke
 Scenario: View a contact T29
 Given User launch the application
 Given User is on "ContactsPage"
@@ -65,7 +65,7 @@ When User enter into textbox "viewUniqueName" "UniqueNameTest"
 Then User Click on "cancel"
 Then User Verify the text not in DropDown "viewDropDown" "UniqueNameTest"
 
-@smoke
+
 Scenario: Check save and New button works fine T32
 Given User launch the application
 Given User is on "ContactsPage"

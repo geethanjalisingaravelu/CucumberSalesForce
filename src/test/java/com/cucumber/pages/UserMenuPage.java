@@ -58,6 +58,9 @@ public class UserMenuPage extends BasePage {
 		addObject("cropPhoto",By.id("j_id0:j_id7:save"));
 		addObject("myProfile",By.xpath("//a[text()='My Profile']"));
 		
+		
+		
+		
 	
 		
 	}
