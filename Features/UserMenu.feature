@@ -72,7 +72,7 @@ Then User read the Data and enter the value to "update" "message"
 Then Switch to Frame defaultcontent
 Then User Click on "share"	
 Then User Click on "file"	
-And sleep for 2000ms
+And sleep for 20000ms
 Then User Click on "uploadFile"	
 And sleep for 2000ms
 Then User read the Data and enter the value to absolute path "chooseFile" "filelocation"
@@ -91,6 +91,7 @@ And sleep for 2000ms
 Then User crop the photo "cropPhotoOffset"
 Then User Click on "cropPhoto"
 Then Switch to Frame defaultcontent
+
 
 
 
