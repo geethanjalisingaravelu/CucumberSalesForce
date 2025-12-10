@@ -44,8 +44,8 @@ Then User Click on "rightArrow"
 Then User Click on "arrowSave"
 Then User Click on "emailLink"
 Then User Click on "emailSettings"
-When User enter into textbox "emailName" "Geethanjali Singaravelu"
-When User enter into textbox "emailAddress" "geethanjali.singaravelu@gmail.com"
+Then User read the Data and enter the value to "emailName" "emailNme"
+Then User read the Data and enter the value to "emailAddress" "emailAddr"
 Then User Click on "autBCCRadio"
 Then User Click on "save1"
 Then User Click on "calAndRem"
@@ -63,17 +63,18 @@ Then User Click on "myProfile"
 Then User Click on "editProfile"
 Then Switch to Frame "iframe"
 Then User Click on "about"
-When User enter into textbox "lastName" "Singaravelu"
+Then User read the Data and enter the value to "lastName" "lname"
 Then User Click on "saveAll"
 Then Switch to Frame defaultcontent
 Then User Click on "post"
 Then Switch to Frame "iframe1"
-When User enter into textbox "update" "Salesforce"
+Then User read the Data and enter the value to "update" "message"
 Then Switch to Frame defaultcontent
 Then User Click on "share"	
 Then User Click on "file"	
-Then User Click on "uploadFile"
-When User enter into textbox "chooseFile" "/Users/shanbalakrishnan/Documents/Geethanjali/Files/Calculator Addition Test Plan.docx"	
+And sleep for 2000ms
+Then User Click on "uploadFile"	
+Then User read the Data and enter the value to absolute path "chooseFile" "filelocation"
 And sleep for 2000ms
 Then User Click on "share"	
 And sleep for 2000ms
@@ -81,11 +82,13 @@ When Move the mouse hover to "profilePhoto"
 When Move the mouse hover and click to "addPhoto"	
 And sleep for 2000ms		
 Then Switch to Frame "iframe2"
-When User enter into textbox "chooseFile1" "/Users/shanbalakrishnan/Documents/Geethanjali/Files/Flower.jpeg"
+Then User read the Data and enter the value to absolute path "chooseFile1" "photolocation"
 And sleep for 2000ms
 Then User Click on "save"
 Then User Click on "cropPhoto"
 Then Switch to Frame defaultcontent
+
+
 
 
 

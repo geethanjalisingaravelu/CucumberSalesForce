@@ -18,7 +18,7 @@ public class LeadsPage extends BasePage {
 	addObject("go",By.name("go"));
 	addObject("todaysLeadsPage",By.id("00BgK00000IFsiU_listBody"));
 	addObject("New",By.name("new"));
-	addObject("leadsNewViewPage",By.xpath("//h2[contains(text(),'Singaravelu')]"));
+	addObject("leadsNewViewPage",By.xpath("//h2[@class='pageDescription']"));
 	addObject("lastname",By.id("name_lastlea2"));
 	addObject("company",By.id("lea3"));
 	addObject("save",By.name("save"));

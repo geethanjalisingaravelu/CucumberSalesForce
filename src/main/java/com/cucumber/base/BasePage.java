@@ -7,6 +7,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Locale;
 import java.util.Map;
+import java.io.File;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -17,6 +18,7 @@ import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 
+//import com.cucumber.steps.File;
 import com.cucumber.utils.PropertiesFile;
 
 
@@ -77,10 +79,21 @@ PropertiesFile prop = new PropertiesFile();
 	public void readandenterintoTextBox(String elementName, String propertyKey) {
 		String inputValue = prop.getProperty(propertyKey);
 		WebElement element = getElement(elementName);
+		element.clear();
 		element.sendKeys(inputValue);
 	}
 	
-	public void verifyText(String elementName,String ExpectedValue) {
+	public void verifyText(String elementName,String propertyKey) {
+		String ExpectedValue = prop.getProperty(propertyKey);
+		WebElement element = getElement(elementName);
+		waitForElement(element);
+		String ActualValue = element.getText();
+		//String ExpectedValue = "Student Registration Form";
+		Assert.assertEquals(ActualValue, ExpectedValue);
+		
+		
+	}
+	public void verifyPlainText(String elementName,String ExpectedValue) {
 		
 		WebElement element = getElement(elementName);
 		waitForElement(element);
@@ -90,6 +103,7 @@ PropertiesFile prop = new PropertiesFile();
 		
 		
 	}
+	
 	public void validatePage(String elementName) {
 		
 		WebElement element = getElement(elementName);
@@ -143,7 +157,28 @@ PropertiesFile prop = new PropertiesFile();
 		
 	}
 	
-	public void verifySelectedValueFromDropDown(String expectedValue, String actualValue) {
+	public void selectPropertyDropDown(String propertyKey, String  elementName) {
+		String valueToSelect = prop.getProperty(propertyKey);
+		boolean found = false;
+		WebElement element = getElement(elementName);
+		  Select option = new Select(element);
+		  for (WebElement opt : option.getOptions()) {
+			    if (opt.getText().equals(valueToSelect)) {
+			        found = true;
+			        break;
+			    }
+			}
+
+			// If NOT found → add Reports
+			if (found) {
+				  option.selectByVisibleText(valueToSelect);
+
+			}
+		
+	}
+	
+	public void verifySelectedValueFromDropDown(String actualValue, String propertyKey) {
+		String expectedValue = prop.getProperty(propertyKey);
 		WebElement element = getElement(actualValue);
 		  Select option = new Select(element);
 		   String actual = option.getFirstSelectedOption().getText().trim();
@@ -151,8 +186,10 @@ PropertiesFile prop = new PropertiesFile();
 		   Assert.assertEquals(actual, expectedValue);
 		
 	}
+
 	
-	public void verifyValueNotinDropDown(String elementName, String viewNameToCheckNotPresent) {
+	public void verifyValueNotinDropDown(String elementName, String propertyKey) {
+		String viewNameToCheckNotPresent = prop.getProperty(propertyKey);
 		WebElement element = getElement(elementName);
 		Select select = new Select(element);
 
@@ -254,6 +291,14 @@ PropertiesFile prop = new PropertiesFile();
 	    Assert.assertEquals(oldTitle, driver.getTitle());
 	}
 	
-
+public void filePhotoUploadAbsPath(String elementName, String propertyKey) {
+	String relativePath = prop.getProperty(propertyKey);  
+	File file = new File(relativePath);
+	String absolutePath = file.getAbsolutePath();
+	System.out.println(absolutePath);
+	WebElement element = getElement(elementName);
+	element.clear();
+	element.sendKeys(absolutePath);
+}
 	
 }

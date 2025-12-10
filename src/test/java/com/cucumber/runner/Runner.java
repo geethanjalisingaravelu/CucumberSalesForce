@@ -10,9 +10,9 @@ import io.cucumber.junit.CucumberOptions;
 @CucumberOptions(
 	//	features= {"/Users/shanbalakrishnan/Documents/Geethanjali/WorkSpace/CucumberBasics/Features/Demo.feature"},
 	//	features= {"/Users/shanbalakrishnan/Documents/Geethanjali/WorkSpace/CucumberFrameworkFirebass/Features"},
-		features= {"Features/Login.feature"},
+		features= {"Features/"},
 		glue= {"com.cucumber.steps"},
-	//	tags= "@smoke",
+		//tags= "@smoke",
 		plugin= {"pretty","html:target/cucumber-reports/cucumber.html",
 						"json:target/cucumber-reports/cucumber.json"}
 		)

@@ -20,13 +20,13 @@ Given User launch the application
 Given User is on "OpportunitiesPage"
 Then User Click on "opportunities"
 Then User Click on "New"
-When User enter into textbox "oppName" "Auto Oppo1"
-When User enter into textbox "accName" "Auto"
-When User enter into textbox "closeDate" "11/03/2025"
+Then User read the Data and enter the value to "oppName" "oppname"
+Then User read the Data and enter the value to "accName" "accname"
+Then User read the Data and enter the value to "closeDate" "closedate"
 Then User selects "Closed Won" from "stage" dropdown
-When User enter into textbox "probability" "60%"
+Then User read the Data and enter the value to "probability" "prob"
 Then User selects "Partner Referral" from "leadSource" dropdown
-When User enter into textbox "campSource" "user"
+Then User read the Data and enter the value to "campSource" "campsource"
 Then User Click on "save"
 Then User verify the page "newOppPage" 
 

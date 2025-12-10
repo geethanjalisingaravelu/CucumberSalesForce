@@ -2,11 +2,6 @@ Feature: Leads test cases
 
 Scenario: Check Leads Tab T20
 Given User launch the application
-Given User is on "LoginPage"
-Then User read the Data and enter the value to "username" "username"
-Then User read the Data and enter the value to "password" "password"
-Then User Click on "Login"
-Then User Click on Verify Button "Verify"
 Given User is on "LeadsPage"
 Then User Click on "Leads"
 Then User verify the page "LeadsHomePage" 
@@ -40,7 +35,7 @@ Then User Click on "Login"
 Given User is on "LeadsPage"
 Then User Click on "Leads"
 Then User Click on "go"
-Then User Verify the text in DropDown "Today's Leads" "actViewDropDown" 
+Then User Verify the text in DropDown "actViewDropDown" "actviewdropdown" 
 
 
 Scenario: Check Leads TodaysLeads T23
@@ -57,8 +52,8 @@ Given User launch the application
 Given User is on "LeadsPage"
 Then User Click on "Leads"
 Then User Click on "New"
-When User enter into textbox "lastname" "Singaravelu"
-When User enter into textbox "company" "Textiles"
+Then User read the Data and enter the value to "lastname" "lastname"
+Then User read the Data and enter the value to "company" "company"
 Then User Click on "save"
-Then User verify the page "leadsNewViewPage" 
+Then User Verify the text "leadsNewViewPage" "lastname"
 

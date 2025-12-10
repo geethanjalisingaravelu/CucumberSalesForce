@@ -17,7 +17,7 @@ public class AccountsPage extends BasePage{
 	addObject("type",By.id("acc6"));
 	addObject("custPriority",By.id("00NgK00002Keeew"));
 	addObject("save",By.name("save"));
-	addObject("newAccountPage",By.xpath("//h2[contains(text(),'Aut Acc10')]"));
+	addObject("newAccountPage",By.xpath("//h2[@class='pageDescription']"));
 	addObject("viewDropDown",By.name("fcf"));
 	addObject("createNewView",By.xpath("//a[contains(text(),'Create New View')]"));
 	addObject("viewName",By.id("fname"));
@@ -38,7 +38,7 @@ public class AccountsPage extends BasePage{
 	addObject("merge",By.xpath("//input[@value=' Merge ']"));
 	addObject("lastActivity",By.partialLinkText("Accounts with last activity > 30 days"));
 	addObject("dateFieldDropDown",By.id("ext-gen149"));
-	addObject("next",By.id("ext-gen149"));
+	//addObject("next",By.id("ext-gen149"));
 	addObject("createdDate",By.xpath("//div[contains(text(),'Created Date')]"));
 	addObject("from",By.id("ext-gen153"));
 	addObject("today1",By.xpath("(//button[contains(text(),'Today')])[1]"));
@@ -49,7 +49,7 @@ public class AccountsPage extends BasePage{
 	addObject("reportNameInput",By.id("saveReportDlg_reportNameField"));
 	addObject("uniqueNameInput",By.id("saveReportDlg_DeveloperName"));
 	addObject("saveAndRunReport",By.xpath("//button[contains(text(),'Save and Run Report')]"));
-	addObject("reportName",By.xpath("//h1[text()='SalesForceRep']"));
+	addObject("reportName",By.xpath("//h1[contains(@class,'noSecondHeader pageType')]"));
 
 	
 

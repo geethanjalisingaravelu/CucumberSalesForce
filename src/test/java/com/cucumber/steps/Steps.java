@@ -5,6 +5,7 @@ package com.cucumber.steps;
 import java.lang.reflect.InvocationTargetException;
 import java.util.List;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
@@ -72,9 +73,14 @@ public class Steps extends BaseTest {
 	}
 
 	@Then("User Verify the text {string} {string}")
-	public void user_verify_the_text(String elementName, String expectedValue) {
+	public void user_verify_the_text(String elementName, String propertyKey) {
 	
-	page.verifyText(elementName, expectedValue);	
+	page.verifyText(elementName, propertyKey);	
+	}
+	
+	@And("User Verify the plain text {string} {string}")
+	public void user_verify_the_plain_text(String elementName, String expectedValue) {
+		page.verifyPlainText(elementName, expectedValue);	
 	}
 
 	@Then("User verify the page {string}")
@@ -95,9 +101,15 @@ public class Steps extends BaseTest {
 	public void user_selects_from_dropdown(String selectValue, String elementName) {
 	  page.selectDropDown(selectValue, elementName);
 	}
+	
+	@Then("User selects property file {string} from {string} dropdown")
+	public void user_selects_property_file_from_dropdown(String selectValue, String elementName) {
+	    page.selectPropertyDropDown(selectValue, elementName);
+	}
+	
 	@Then("User Verify the text in DropDown {string} {string}")
-	public void user_verify_the_text_in_drop_down(String expectedValue, String actualValue) {
-	   page.verifySelectedValueFromDropDown(expectedValue,actualValue);
+	public void user_verify_the_text_in_drop_down(String elementName, String propertyKey) {
+	   page.verifySelectedValueFromDropDown(elementName,propertyKey);
 	}
 	
 	@Then("User Verify the text not in DropDown {string} {string}")
@@ -142,10 +154,14 @@ public class Steps extends BaseTest {
 	public void move_the_mouse_hover_and_click_to(String elementName) {
 	   page.mouseHoverClickaction(elementName);
 	}
-	
 	@And ("sleep for 2000ms")
-	public void sleep() throws InterruptedException {
+	public void sleep1() throws InterruptedException {
 		Thread.sleep(2000);
+	}
+	
+	@And ("sleep for 20000ms")
+	public void sleep() throws InterruptedException {
+		Thread.sleep(20000);
 	}
 	@And ("User switch to window alert and accept")
 	public void user_switch_to_window_alert_and_accept() {
@@ -163,6 +179,11 @@ public class Steps extends BaseTest {
 	@And("User switch to other window {string}")
 	public void user_switch_to_other_window(String elementName) {
 	  page.switchToOtherWindow(elementName);
+	}
+	@Then("User read the Data and enter the value to absolute path {string} {string}")
+	public void user_read_the_data_and_enter_the_value_to_absolute_path(String elementName, String propertyKey) {
+		page.filePhotoUploadAbsPath(elementName,propertyKey);
+		
 	}
 
 

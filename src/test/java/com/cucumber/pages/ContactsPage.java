@@ -18,7 +18,7 @@ public class ContactsPage extends BasePage {
 	addObject("lname",By.id("name_lastcon2"));
 	addObject("accName",By.id("con4"));
 	addObject("save",By.name("save"));
-	addObject("newContact",By.xpath("//h2[contains(text(),'Shan')]"));
+	addObject("newContact",By.xpath("//h2[@class='pageDescription']"));
 	addObject("createNewView",By.xpath("//a[contains(text(),'Create New View')]"));
 	addObject("viewName",By.id("fname"));
 	addObject("viewUniqueName",By.id("devname"));

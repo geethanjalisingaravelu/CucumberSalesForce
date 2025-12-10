@@ -11,7 +11,7 @@ public class RandomScenariosPage extends BasePage {
 	public RandomScenariosPage(WebDriver driver) {
 		super(driver);
 		
-		addObject("topLeftUsername",By.xpath("//h1/a[contains(text(),'Geethanjali Singaravelu')]"));
+		addObject("topLeftUsername",By.xpath("//h1[@class='currentStatusUserName']"));
 		addObject("allTabsArrow",By.xpath("//img[@class='allTabsArrow']"));
 		addObject("customizeTabs",By.name("customize"));
 		addObject("selectedTabs",By.id("duel_select_1"));
