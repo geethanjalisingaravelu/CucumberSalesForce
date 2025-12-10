@@ -27,7 +27,7 @@ Then User Click on "userMenuDropDown"
 Then User Click on "logout"
 Then User verifies logout and is redirected to Salesforce login page
 
-
+@smoke
 Scenario: Select My Settings Option from UserMenu drop down T07
 Given User launch the application
 Given User is on "UserMenuPage"
