@@ -74,18 +74,18 @@ Then User Click on "share"
 Then User Click on "file"	
 And sleep for 20000ms
 Then User Click on "uploadFile"	
-And sleep for 2000ms
+And sleep for 20000ms
 Then User read the Data and enter the value to absolute path "chooseFile" "filelocation"
-And sleep for 2000ms
+And sleep for 20000ms
 Then User Click on "share"	
-And sleep for 2000ms
+And sleep for 20000ms
 When Move the mouse hover to "profilePhoto"
 When Move the mouse hover and click to "addPhoto"	
 And sleep for 2000ms		
 Then Switch to Frame "iframe2"
-And sleep for 2000ms
+And sleep for 20000ms
 Then User read the Data and enter the value to absolute path "chooseFile1" "photolocation"
-And sleep for 2000ms
+And sleep for 20000ms
 Then User Click on "save"
 And sleep for 2000ms
 Then User crop the photo "cropPhotoOffset"
