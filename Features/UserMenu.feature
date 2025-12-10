@@ -27,7 +27,7 @@ Then User Click on "userMenuDropDown"
 Then User Click on "logout"
 Then User verifies logout and is redirected to Salesforce login page
 
-@smoke
+
 Scenario: Select My Settings Option from UserMenu drop down T07
 Given User launch the application
 Given User is on "UserMenuPage"
@@ -72,19 +72,23 @@ Then User read the Data and enter the value to "update" "message"
 Then Switch to Frame defaultcontent
 Then User Click on "share"	
 Then User Click on "file"	
-And sleep for 20000ms
+And sleep for 2000ms
 Then User Click on "uploadFile"	
+And sleep for 2000ms
 Then User read the Data and enter the value to absolute path "chooseFile" "filelocation"
-And sleep for 20000ms
+And sleep for 2000ms
 Then User Click on "share"	
-And sleep for 20000ms
+And sleep for 2000ms
 When Move the mouse hover to "profilePhoto"
 When Move the mouse hover and click to "addPhoto"	
-And sleep for 20000ms		
+And sleep for 2000ms		
 Then Switch to Frame "iframe2"
+And sleep for 2000ms
 Then User read the Data and enter the value to absolute path "chooseFile1" "photolocation"
-And sleep for 20000ms
+And sleep for 2000ms
 Then User Click on "save"
+And sleep for 2000ms
+Then User crop the photo "cropPhotoOffset"
 Then User Click on "cropPhoto"
 Then Switch to Frame defaultcontent
 

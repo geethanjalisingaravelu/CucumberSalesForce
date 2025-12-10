@@ -57,6 +57,7 @@ public class UserMenuPage extends BasePage {
 		addObject("save",By.id("j_id0:uploadFileForm:uploadBtn"));
 		addObject("cropPhoto",By.id("j_id0:j_id7:save"));
 		addObject("myProfile",By.xpath("//a[text()='My Profile']"));
+		addObject("cropPhotoOffset",By.xpath("//div[contains(@class,'imgCrop_handle')]"));
 		
 		
 		

@@ -186,7 +186,10 @@ public class Steps extends BaseTest {
 		
 	}
 
-
+	@Then("User crop the photo {string}")
+	public void user_crop_the_photo(String elementName) {
+	   page.cropPhoto(elementName);
+	}
 
 	
 	@After

@@ -300,5 +300,12 @@ public void filePhotoUploadAbsPath(String elementName, String propertyKey) {
 	element.clear();
 	element.sendKeys(absolutePath);
 }
+
+public void cropPhoto(String elementName) {
+
+	Actions action = new Actions(driver);
+	WebElement element = getElement(elementName);
+    action.clickAndHold(element).moveByOffset(10, 10).release().build().perform(); // adjust offset as needed
+}
 	
 }
